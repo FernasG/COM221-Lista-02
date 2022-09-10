@@ -33,7 +33,7 @@ public class TestGeradorArquivo {
 
     @Test(expected = OpcaoErradaException.class)
     public void testeOpcaoErrada() throws OpcaoErradaException {
-        new PessoaService().gerarArquivo(null);
+        this.service.gerarArquivo(null);
     }
 
     @Test
