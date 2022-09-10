@@ -1,9 +1,12 @@
 package br.unifei.imc.PessoaService;
 
-import br.unifei.imc.GeradorArquivo.GeradorCSV;
 import br.unifei.imc.GeradorArquivo.GeradorJSON;
+import br.unifei.imc.GeradorArquivo.GeradorCSV;
+import br.unifei.imc.OpcaoErradaException;
 import br.unifei.imc.OpcaoArquivo;
 import br.unifei.imc.Pessoa;
+import lombok.SneakyThrows;
+
 import java.util.ArrayList;
 
 public class PessoaService {
@@ -18,7 +21,9 @@ public class PessoaService {
         pessoas.add(new Pessoa(3, "Andreas", 60));
     }
 
-    public void gerarArquivo(OpcaoArquivo opcao) {
+    public void gerarArquivo(OpcaoArquivo opcao) throws OpcaoErradaException {
+        if (opcao == null) throw new OpcaoErradaException("Opção inválida");
+
         if (opcao.toString().equals("CSV")) {
             new GeradorCSV().gerarArquivo(this.pessoas);
         } else if (opcao.toString().equals("JSON")) {
