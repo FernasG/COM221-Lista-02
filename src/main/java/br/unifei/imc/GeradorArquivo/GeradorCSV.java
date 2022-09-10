@@ -1,9 +1,8 @@
 package br.unifei.imc.GeradorArquivo;
 
-import br.unifei.imc.Pessoa;
-import com.opencsv.CSVWriter;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
-
+import com.opencsv.CSVWriter;
+import br.unifei.imc.Pessoa;
 import java.io.FileWriter;
 import java.util.List;
 
